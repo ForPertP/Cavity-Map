@@ -1,4 +1,4 @@
 # Cavity-Map
-Educational source for students.
+Educational sources for students.
 
 https://www.hackerrank.com/challenges/cavity-map/problem
