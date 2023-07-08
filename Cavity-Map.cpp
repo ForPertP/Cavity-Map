@@ -30,3 +30,38 @@ vector<string> cavityMap(vector<string> grid)
     
     return grid;
 }
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string n_temp;
+    getline(cin, n_temp);
+
+    int n = stoi(ltrim(rtrim(n_temp)));
+
+    vector<string> grid(n);
+
+    for (int i = 0; i < n; i++) {
+        string grid_item;
+        getline(cin, grid_item);
+
+        grid[i] = grid_item;
+    }
+
+    vector<string> result = cavityMap(grid);
+
+    for (size_t i = 0; i < result.size(); i++) {
+        fout << result[i];
+
+        if (i != result.size() - 1) {
+            fout << "\n";
+        }
+    }
+
+    fout << "\n";
+
+    fout.close();
+
+    return 0;
+}
