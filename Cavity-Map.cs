@@ -12,3 +12,17 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
+class Result
+{
+
+    /*
+     * Complete the 'cavityMap' function below.
+     *
+     * The function is expected to return a STRING_ARRAY.
+     * The function accepts STRING_ARRAY grid as parameter.
+     */
+
+    public static List<string> cavityMap(List<string> grid)
+    {
+    }
+}
