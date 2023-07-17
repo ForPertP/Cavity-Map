@@ -24,9 +24,26 @@ class Result
 
     public static List<string> cavityMap(List<string> grid)
     {
-    }
-}
+        for (int i = 1; i < grid.Count - 1; ++i)
+        {
+            for (int k = 1; k < grid[i].Length - 1; ++k)
+            {
+                if (grid[i][k] > grid[i - 1][k] &&
+                    grid[i][k] > grid[i + 1][k] &&
+                    grid[i][k] > grid[i][k - 1] &&
+                    grid[i][k] > grid[i][k + 1])
+                {
+                    char[] chars = grid[i].ToCharArray();
+                    chars[k] = 'X';
+                    grid[i] = new string(chars);
+                }
+            }
+        }
 
+        return grid;
+    }
+
+}
 
 class Solution
 {
