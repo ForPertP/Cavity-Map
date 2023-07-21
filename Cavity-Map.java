@@ -1,5 +1,3 @@
-Cavity-Map.java
-
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -23,12 +21,23 @@ class Result {
 
     public static List<String> cavityMap(List<String> grid) {
     // Write your code here
+        for (int i = 1; i < grid.size() - 1; ++i) {
+            for (int k = 1; k < grid.get(i).length() - 1; ++k) {
+                if (grid.get(i).charAt(k) > grid.get(i - 1).charAt(k) &&
+                    grid.get(i).charAt(k) > grid.get(i + 1).charAt(k) &&
+                    grid.get(i).charAt(k) > grid.get(i).charAt(k - 1) &&
+                    grid.get(i).charAt(k) > grid.get(i).charAt(k + 1)) {
+                    char[] chars = grid.get(i).toCharArray();
+                    chars[k] = 'X';
+                    grid.set(i, new String(chars));
+                }
+            }
+        }
+
         return grid;
     }
 
 }
-
-
 
 public class Solution {
     public static void main(String[] args) throws IOException {
